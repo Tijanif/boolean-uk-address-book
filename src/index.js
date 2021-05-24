@@ -129,112 +129,104 @@ function listenNewContactButton() {
     // [TODO] Write Code
     viewSection.innerHTML = '';
     const contactForm = renderFormEl();
+
     viewSection.append(contactForm);
   });
 }
 
+const createEl = (tag, options = null) => {
+  const element = document.createElement(tag);
+
+  options &&
+    Object.keys(options).forEach((propKey) => {
+      element[propKey] = options[propKey];
+    });
+
+  return element;
+};
+
 const renderFormEl = () => {
-  const formEl = document.createElement('form');
+  const formEl = createEl('form');
   formEl.className = 'form-stack light-shadow center contact-form';
 
-  const fromH1El = document.createElement('h1');
+  const fromH1El = createEl('h1');
   fromH1El.innerText = 'Create Contact';
 
   // first name label
-  const firstNameLabel = document.createElement('label');
-  firstNameLabel.setAttribute('for', 'first-name-input');
+  const firstNameLabel = createEl('label', {
+    for: 'first-name-input',
+  });
+  // firstNameLabel.setAttribute('for', 'first-name-input');
   firstNameLabel.innerText = 'First Name:';
   // first name input
-  const firstNameInput = document.createElement('input');
-  firstNameInput.setAttribute(
-    'id',
-    'first-name-input',
-    'name',
-    'first-name-input',
-    'type',
-    'text'
-  );
+  const firstNameInput = createEl('input', {
+    id: 'firstname',
+    name: 'first-name-input',
+  });
+  // firstNameInput.setAttribute('id', 'firstname');
+  // firstNameInput.setAttribute('name', 'first-name-input', 'type', 'text');
   // labe for last name
-  const lastNameLabel = document.createElement('label');
+  const lastNameLabel = createEl('label');
   lastNameLabel.setAttribute('for', 'last-name-input');
   lastNameLabel.innerText = 'Last Name:';
 
   // input last name
-  const lastNameInput = document.createElement('input');
-  lastNameInput.setAttribute(
-    'id',
-    'last-name-input',
-    'name',
-    'last-name-input',
-    'type',
-    'text'
-  );
-
+  const lastNameInput = createEl('input');
+  lastNameInput.setAttribute('id', 'lastname');
+  lastNameInput.setAttribute('name', 'last-name-input', 'type', 'text');
   // street label
-  const streetLabel = document.createElement('labe');
+  const streetLabel = createEl('labe');
   streetLabel.setAttribute('for', 'street-input');
   streetLabel.innerText = 'Street:';
 
   // street input
-  const streetInput = document.createElement('input');
-  streetInput.setAttribute(
-    'id',
-    'street-input',
-    'name',
-    'street-input',
-    'type',
-    'text'
-  );
+  const streetInput = createEl('input');
+  streetInput.setAttribute('id', 'street-input');
+  streetInput.setAttribute('name', 'street', 'type', 'text');
 
   // city label
-  const cityLabel = document.createElement('label');
+  const cityLabel = createEl('label');
   cityLabel.setAttribute('for', 'city-input');
   cityLabel.innerText = 'City:';
 
   // city input
-  const cityInput = document.createElement('input');
-  cityInput.setAttribute(
-    'id',
-    'city-input',
-    'name',
-    'city-input',
-    'type',
-    'text'
-  );
+  const cityInput = createEl('input');
+  cityInput.setAttribute('id', 'city-input');
+  cityInput.setAttribute('name', 'city', 'type', 'text');
 
   // postCode label
-  const postCodeLabel = document.createElement('label');
+  const postCodeLabel = createEl('label');
   postCodeLabel.setAttribute('for', 'post-code-input');
   postCodeLabel.innerText = 'Post Code:';
 
   // postCode input
-  const postCodeInput = document.createElement('input');
+  const postCodeInput = createEl('input');
   postCodeInput.setAttribute('id', 'post-code-input');
-  postCodeInput.setAttribute('name', 'post-code-input');
+  postCodeInput.setAttribute('name', 'postCode');
   postCodeInput.setAttribute('type', 'text');
 
   // Checkbox section
-  const checkboxSectionEL = document.createElement('div');
+  const checkboxSectionEL = createEl('div');
   checkboxSectionEL.setAttribute('class', 'checkbox-section');
 
-  const checkboxInput = document.createElement('input');
+  const checkboxInput = createEl('input');
   checkboxInput.setAttribute('id', 'block-checkbox');
   checkboxInput.setAttribute('type', 'checkbox');
   checkboxInput.setAttribute('name', 'block-checkbox');
 
   // checkbox label
 
-  const checkboxLabel = document.createElement('label');
+  const checkboxLabel = createEl('label');
   checkboxLabel.setAttribute('for', 'block-checkbox');
   checkboxLabel.innerText = 'Block';
 
   checkboxSectionEL.append(checkboxInput, checkboxLabel);
 
   // actions section
-  const actionsSection = document.createElement('div');
+  const actionsSection = createEl('div');
   actionsSection.setAttribute('class', 'actions-section');
 
-  actionsSectionBtn = document.createElement('button');
+  actionsSectionBtn = createEl('button');
   actionsSectionBtn.setAttribute('class', 'button blue', 'type', 'submit');
   actionsSectionBtn.innerText = 'Create';
 
@@ -255,8 +247,30 @@ const renderFormEl = () => {
     actionsSection
   );
 
+  // formEl.addEventListener('submit', submitForm)
+  // {
+  // }
+
+  const submitForm = (event) => {
+    event.preventDefault();
+
+    const { firstName, lastName, city, street } = e.value;
+
+    const contact = {
+      firstName: firstName.value,
+      LastName: lastName.value,
+      blockContact: true,
+    };
+  };
   return formEl;
 };
+
+const addContact = () => {
+  const form = renderFormEl();
+
+  console.log('I am inside the add contact', form.firstNameInput.value);
+};
+renderFormEl();
 // [TODO] Write Code
 
 function main() {
