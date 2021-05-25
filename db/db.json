@@ -27,48 +27,6 @@
       "blockContact": false,
       "addressId": 4,
       "id": 4
-    },
-    {
-      "firstName": "Jack ",
-      "lastName": "Strong",
-      "blockContact": false,
-      "addressId": 5,
-      "id": 5
-    },
-    {
-      "firstName": "hehe",
-      "lastName": "eheh",
-      "blockContact": false,
-      "addressId": 6,
-      "id": 6
-    },
-    {
-      "firstName": "ll",
-      "lastName": "lll",
-      "blockContact": false,
-      "addressId": 7,
-      "id": 7
-    },
-    {
-      "firstName": "ghh",
-      "lastName": "hhh",
-      "blockContact": false,
-      "addressId": 8,
-      "id": 8
-    },
-    {
-      "firstName": "ghh",
-      "lastName": "hhh",
-      "blockContact": false,
-      "addressId": 9,
-      "id": 9
-    },
-    {
-      "firstName": "jkk",
-      "lastName": "jjj",
-      "blockContact": false,
-      "addressId": 10,
-      "id": 10
     }
   ],
   "addresses": [
@@ -95,42 +53,6 @@
       "street": "TaTi Road 56",
       "city": "TijaniVille",
       "postCode": "Wearecool56"
-    },
-    {
-      "id": 5,
-      "street": "ladywell 56",
-      "city": "bannana ",
-      "postCode": "3455"
-    },
-    {
-      "id": 6,
-      "street": "hehe",
-      "city": "hehe",
-      "postCode": "hehew"
-    },
-    {
-      "id": 7,
-      "street": "ll",
-      "city": "ll",
-      "postCode": "ll"
-    },
-    {
-      "id": 8,
-      "street": "hht",
-      "city": "hht",
-      "postCode": "hhr"
-    },
-    {
-      "id": 9,
-      "street": "hht",
-      "city": "hht",
-      "postCode": "hhr"
-    },
-    {
-      "id": 10,
-      "street": "hhh",
-      "city": "jhjhj",
-      "postCode": "hjjj"
     }
   ]
 }
